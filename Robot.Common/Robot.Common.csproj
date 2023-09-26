@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: C:\users\olecs\OneDrive\Рабочий стол\Tournament\Robot.Common.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A24898A7-72E4-4BF4-A116-6417DED5E47E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Robot.Common</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>Robot.Common</RootNamespace>
+    <LangVersion>7</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CollectEnergyCommand.cs" />
+    <Compile Include="CreateNewRobotCommand.cs" />
+    <Compile Include="EnergyStation.cs" />
+    <Compile Include="IRobotAlgorithm.cs" />
+    <Compile Include="LogValue.cs" />
+    <Compile Include="LogRoundEventArgs.cs" />
+    <Compile Include="LogEventArgs.cs" />
+    <Compile Include="LogEventHandler.cs" />
+    <Compile Include="LogRoundEventHandler.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="MapSize.cs" />
+    <Compile Include="MapResourceFill.cs" />
+    <Compile Include="Map.cs" />
+    <Compile Include="MoveCommand.cs" />
+    <Compile Include="Owner.cs" />
+    <Compile Include="Position.cs" />
+    <Compile Include="Robot.cs" />
+    <Compile Include="RobotStepCompletedEventHandler.cs" />
+    <Compile Include="RobotCommand.cs" />
+    <Compile Include="UpdateViewAfterRobotStepEventArgs.cs" />
+    <Compile Include="Variant.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Robot.Tournament\Robot.Tournament.csproj">
+      <Project>{91e1a7c2-4a95-4ba4-b574-c6cfb0e00148}</Project>
+      <Name>Robot.Tournament</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RobotChallenge\RobotChallenge.csproj">
+      <Project>{e7bea562-61bd-4a76-b7d2-f58a6f37f19a}</Project>
+      <Name>RobotChallenge</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

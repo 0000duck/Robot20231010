@@ -1,0 +1,8 @@
+C:\Users\olecs\Downloads\robotchallange\RobotChallenge\obj\Debug\RobotChallenge.csprojResolveAssemblyReference.cache
+C:\Users\olecs\Downloads\robotchallange\RobotChallenge\obj\Debug\energystationcontrol.baml
+C:\Users\olecs\Downloads\robotchallange\RobotChallenge\obj\Debug\robotcontrol.baml
+C:\Users\olecs\Downloads\robotchallange\RobotChallenge\obj\Debug\startwindow.baml
+C:\Users\olecs\Downloads\robotchallange\RobotChallenge\obj\Debug\energystationcontrol.g.cs
+C:\Users\olecs\Downloads\robotchallange\RobotChallenge\obj\Debug\robotcontrol.g.cs
+C:\Users\olecs\Downloads\robotchallange\RobotChallenge\obj\Debug\startwindow.g.cs
+C:\Users\olecs\Downloads\robotchallange\RobotChallenge\obj\Debug\RobotChallenge_MarkupCompile.cache

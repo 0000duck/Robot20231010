@@ -1,0 +1,73 @@
+<Window x:Class="RobotChallenge.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Robot Challange. Author: Pavlo Serdyuk, 2013. All rights reserved." SizeToContent="Manual"
+        WindowState="Maximized" Height="1000" Width="1250" WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+  <Grid Height="1000">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="360"/>
+      <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="900"/>
+    </Grid.RowDefinitions>
+    <Grid x:Name="ChalangePanel" Column="0" Row="0">
+      <Grid.RowDefinitions>
+        <RowDefinition/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="300"/>
+      </Grid.RowDefinitions>
+      <StackPanel Grid.Column="0" Grid.Row="0" Margin="20">
+        <Button Click="buttonStart_Click" Name="buttonStart" Content="Start" Height="23" Width="75"
+                HorizontalAlignment="Left"/>
+        <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+          <TextBlock Text="Speed"/>
+          <ComboBox SelectionChanged="comboBoxSpeed_SelectionChanged" Name="comboBoxSpeed" Height="23" Width="120"
+                    Margin="20,0,20,0" SelectedIndex="0" SelectedValuePath="Tag">
+            <ComboBoxItem Content="Slow" Tag="1500"/>
+            <ComboBoxItem Content="Normal" Tag="300"/>
+            <ComboBoxItem Content="High" Tag="50"/>
+          </ComboBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+          <Button Click="buttonShowHideLog_Click" Name="buttonShowHideLog" Content="Hide Log" Height="23" Width="75"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+          <TextBlock Text="Round#" FontWeight="Bold"/>
+          <TextBlock x:Name="TextBlockRoundNumber" Text="0" Margin="20,0,0,0" FontWeight="Bold"/>
+        </StackPanel>
+        <DataGrid x:Name="ListStatistics" Grid.Row="1" Margin="0,5,0,10" AutoGenerateColumns="false"
+                  IsReadOnly="true">
+          <DataGrid.Columns>
+            <DataGridTextColumn Header="Color" Width="SizeToHeader">
+              <DataGridBoundColumn.ElementStyle>
+                <Style TargetType="{x:Type TextBlock}">
+                  <Setter Property="TextBlock.Background" Value="{Binding Color}"/>
+                </Style>
+              </DataGridBoundColumn.ElementStyle>
+            </DataGridTextColumn>
+            <DataGridTextColumn Header="Name" Width="SizeToCells" Binding="{Binding Name}"/>
+            <DataGridTextColumn Header="Energy" Width="80" Binding="{Binding TotalEnergy}"/>
+            <DataGridTextColumn Header="Robot count" Width="80" Binding="{Binding RobotsCount}"/>
+          </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="LogList" Grid.Row="2" Height=" Auto" Margin="0,5,0,10" AutoGenerateColumns="false"
+                  ItemsSource="{Binding Messsages}">
+          <DataGrid.Columns>
+            <DataGridTextColumn Header="Color" Width="SizeToHeader">
+              <DataGridBoundColumn.ElementStyle>
+                <Style TargetType="{x:Type TextBlock}">
+                  <Setter Property="TextBlock.Background" Value="{Binding Color}"/>
+                </Style>
+              </DataGridBoundColumn.ElementStyle>
+            </DataGridTextColumn>
+            <DataGridTextColumn Header="Name" Width="SizeToCells" Binding="{Binding Name}"/>
+            <DataGridTextColumn Header="Message" Width="SizeToCells" Binding="{Binding Message}"/>
+          </DataGrid.Columns>
+        </DataGrid>
+      </StackPanel>
+    </Grid>
+    <Canvas x:Name="RobotGrid" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="0"/>
+  </Grid>
+</Window>
